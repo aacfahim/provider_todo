@@ -3,10 +3,12 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
 class AddTask extends StatelessWidget {
-  const AddTask({super.key});
+  final Function addTaskCallBack;
+  AddTask({super.key, required this.addTaskCallBack});
 
   @override
   Widget build(BuildContext context) {
+    String? newTask;
     return Container(
       color: Colors.transparent,
       child: Container(
@@ -26,13 +28,20 @@ class AddTask extends StatelessWidget {
                     color: Colors.lightBlueAccent,
                     fontWeight: FontWeight.bold),
               ),
-              TextField(),
+              TextField(
+                autofocus: true,
+                onChanged: (value) {
+                  newTask = value;
+                },
+              ),
               SizedBox(height: 20),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.lightBlueAccent,
                     fixedSize: Size(200, 50)),
-                onPressed: () {},
+                onPressed: () {
+                  addTaskCallBack(newTask);
+                },
                 child: Text("Add"),
               )
             ],

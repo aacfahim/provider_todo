@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         canvasColor: Colors.transparent,
         primarySwatch: Colors.blue,
       ),
-      home: const TaskScreen(),
+      home: TaskScreen(),
     );
   }
 }

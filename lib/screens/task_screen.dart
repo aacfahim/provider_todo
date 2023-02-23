@@ -17,11 +17,7 @@ class TaskScreen extends StatelessWidget {
           showModalBottomSheet(
               context: context,
               builder: (context) => SingleChildScrollView(
-                    child: AddTask(addTaskCallBack: (newTask) {
-                      // setState(() {
-                      //   lists.add(Task(name: newTask));
-                      // });
-                    }),
+                    child: AddTask(),
                   ));
         },
         child: Icon(Icons.add),

@@ -10,6 +10,8 @@ class AddTask extends StatelessWidget {
   Widget build(BuildContext context) {
     String? newTask;
     return Container(
+      padding:
+          EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
       color: Colors.transparent,
       child: Container(
           padding: EdgeInsets.all(30.0),

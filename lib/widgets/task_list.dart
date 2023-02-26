@@ -18,7 +18,10 @@ class _TaskListState extends State<TaskList> {
       builder: (context, value, child) {
         return ListView.builder(
             itemCount: value.taskCount,
-            itemBuilder: (context, index) {
+            itemBuilder: (
+              context,
+              index,
+            ) {
               return TaskTile(
                   name: value.lists[index].name,
                   isChecked: value.lists[index].isDone,

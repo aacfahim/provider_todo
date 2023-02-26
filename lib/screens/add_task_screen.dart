@@ -44,10 +44,12 @@ class AddTask extends StatelessWidget {
                     backgroundColor: Colors.lightBlueAccent,
                     fixedSize: Size(200, 50)),
                 onPressed: () {
-                  Provider.of<TaskData>(context).addTask(newTask!);
+                  Provider.of<TaskData>(context, listen: false)
+                      .addTask(newTask!);
                   Navigator.pop(context);
+                  // print(Provider.of<TaskData>(context).lists.toList());
                 },
-                child: Text("Add"),
+                child: Text("ADD"),
               )
             ],
           )),

@@ -23,14 +23,19 @@ class _TaskListState extends State<TaskList> {
               index,
             ) {
               return TaskTile(
-                  name: value.lists[index].name,
-                  isChecked: value.lists[index].isDone,
-                  isEmpty: value.taskCount,
-                  checkBoxCallback: (checkBoxState) {
-                    // setState(() {
-                    //   widget.lists![index].toggleDone();
-                    // });
+                name: value.lists[index].name,
+                isChecked: value.lists[index].isDone,
+                isEmpty: value.taskCount,
+                checkBoxCallback: (checkBoxState) {
+                  setState(() {
+                    value.updateTask(value.lists[index]);
                   });
+                },
+                onLongPressCallback: () {
+                  value.deleteTask(value.lists[index]);
+                  setState(() {});
+                },
+              );
             });
       },
     );
